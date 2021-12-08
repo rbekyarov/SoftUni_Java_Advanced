@@ -19,6 +19,7 @@ public class p6Hot_Potato {
                 queuePlayer.offer(currentPlayer);
 
             }
+
             String removedPlayer = queuePlayer.poll();
             System.out.println("Removed "+removedPlayer);
 
