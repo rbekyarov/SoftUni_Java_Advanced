@@ -26,31 +26,36 @@ public class p6BalancedParentheses {
         }
         boolean isBalanced = true;
         if (!(openParenthesisStack.size() == closedParenthesisQueue.size())) {
-
             isBalanced = false;
         } else {
             for (int i = 0; i < counterOpenParenthesis; i++) {
                 char openedParenthesis = openParenthesisStack.pop();
                 char closedParenthesis = closedParenthesisQueue.poll();
-                if(!isBalanced){
+                if (!isBalanced) {
                     break;
                 }
                 switch (openedParenthesis) {
                     case '{':
                         if (closedParenthesis == '}') {
                             isBalanced = true;
-                            break;
+                        } else {
+                            isBalanced = false;
                         }
+                        break;
                     case '[':
                         if (closedParenthesis == ']') {
                             isBalanced = true;
-                            break;
+                        } else {
+                            isBalanced = false;
                         }
+                        break;
                     case '(':
                         if (closedParenthesis == ')') {
                             isBalanced = true;
-                            break;
+                        } else {
+                            isBalanced = false;
                         }
+                        break;
                     default:
                         isBalanced = false;
                         break;
