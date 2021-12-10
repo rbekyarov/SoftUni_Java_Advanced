@@ -39,7 +39,9 @@ public class p1CompareMatrices {
     }
 
     public static boolean compareDimentions(int[][] matrix1, int[][] matrix2) {
-        if (matrix1.length != matrix2.length) return false;
+        if (matrix1.length != matrix2.length){
+            return false;
+        }
         for (int row = 0; row < matrix1.length; row++) {
             if (matrix1[row].length != matrix2[row].length) {
                 return false;
