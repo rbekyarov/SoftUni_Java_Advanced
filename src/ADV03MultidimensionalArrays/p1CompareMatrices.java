@@ -7,13 +7,13 @@ public class p1CompareMatrices {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[][] matrix1 = createMatrix(scanner);
-        addElementInMatrix(matrix1, scanner);
+        int[][] matrix1 = createMatrix(scanner);//създаваме Матрица 1
+        addElementInMatrix(matrix1, scanner); // пълним със стойности
 
-        int[][] matrix2 = createMatrix(scanner);
-        addElementInMatrix(matrix2, scanner);
+        int[][] matrix2 = createMatrix(scanner);//създаваме Матрица 2
+        addElementInMatrix(matrix2, scanner);//пълним със стойности
 
-        if (compareDimentions(matrix1, matrix2)) {
+        if (compareDimentions(matrix1, matrix2)) {//сравняваме
             System.out.println("equal");
         } else {
             System.out.println("not equal");
