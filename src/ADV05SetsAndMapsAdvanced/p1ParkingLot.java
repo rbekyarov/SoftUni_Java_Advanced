@@ -20,8 +20,12 @@ public class p1ParkingLot {
             }
             input = scanner.nextLine().split(", ");
         }
-        for (String car : parkingLot) {
-            System.out.println(car);
+        if (!parkingLot.isEmpty()) {
+            for (String car : parkingLot) {
+                System.out.println(car);
+            }
+        } else {
+            System.out.println("Parking Lot is Empty");
         }
     }
 }
