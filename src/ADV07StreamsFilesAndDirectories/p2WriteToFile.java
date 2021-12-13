@@ -10,8 +10,10 @@ public class p2WriteToFile {
 
         String path = "E:\\folder\\input.txt";
         String tableRemove = ",.!?";
+
         FileInputStream fileStream = new FileInputStream(path);
         FileOutputStream outputStream = new FileOutputStream("output.txt");
+
         Scanner scanner = new Scanner(fileStream);
         while (scanner.hasNext()) {
             String text = scanner.nextLine();
