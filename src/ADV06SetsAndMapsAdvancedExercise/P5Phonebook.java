@@ -24,15 +24,11 @@ public class P5Phonebook {
         while (!command.equals("stop")) {
             String nameSearch = command;
             if (phoneBook.containsKey(nameSearch)) {
-                for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
 
-                }
+                System.out.println(nameSearch + " -> " + phoneBook.get(nameSearch));
 
-                phoneBook.forEach((k, v) -> {
-                    System.out.println(k + " -> " + v);
-                });
             } else {
-                System.out.println("Contact simo does not exist.");
+                System.out.printf("Contact %s does not exist.%n", nameSearch);
             }
             command = scanner.nextLine();
         }
