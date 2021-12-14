@@ -20,6 +20,7 @@ public class p4Count_Character_Types {
         String vowels = "aeiou";
         String punctuation = "!,.?";
         String space = " ";
+
         int sumVowels = 0;
         int sumConsonants = 0;
         int sumPunctuation = 0;
@@ -35,6 +36,7 @@ public class p4Count_Character_Types {
             } else {
                 sumConsonants++;
             }
+
         }
         writer.println("Vowels: " + sumVowels);
         writer.println("Consonants: " + sumConsonants);
