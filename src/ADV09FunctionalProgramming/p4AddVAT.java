@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 public class p4AddVAT {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         UnaryOperator<Double> addVat = e -> e * 1.2;
 
         List<Double> inputValues = Arrays.stream(scanner.nextLine().split(", "))
