@@ -10,7 +10,7 @@ public class p2KnightsOfHonor {
 
         String[] knights = scanner.nextLine().split("\\s+");
 
-        Consumer<String> printElementArr = e -> System.out.println("Sir "+e);
+        Consumer<String> printElementArr = e -> System.out.println("Sir " + e);
 
         Arrays.stream(knights).forEach(e -> printElementArr.accept(e));
     }
