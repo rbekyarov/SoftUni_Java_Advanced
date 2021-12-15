@@ -1,4 +1,12 @@
-package ADV09FunctionalProgramming;
+/*
+Write a program that reads one line of Integers separated by ", ".
+        •	Print the even numbers
+        •	Sort them in ascending order
+        •	Print them again.
+*/
+
+
+        package ADV09FunctionalProgramming;
 
 import java.util.Arrays;
 import java.util.List;
