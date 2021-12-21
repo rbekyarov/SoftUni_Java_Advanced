@@ -11,6 +11,6 @@ public class Main1 {
         car.setModel("Impala");
         car.setHorsePower(390);
 
-        System.out.printf("The car is: %s %s – %d HP.", car.getBrand(),car.getModel(),car.getHorsePower());
+        System.out.printf("The car is: %s %s - %d HP.", car.getBrand(),car.getModel(),car.getHorsePower());
     }
 }
