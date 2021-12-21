@@ -38,20 +38,17 @@ public class Main {
         }
         String command = scanner.nextLine();
 
+        if (command.equals("flamable")) {
+            carMap.entrySet().stream()
+                    .filter(e -> e.getValue().getEngine().getEnginePower() > 250)
+                    .forEach(e -> System.out.println(e.getKey()));
+        } else {
+            for (Map.Entry<String, Car> entry : carMap.entrySet()) {
+                entry.getValue().getTires().stream().filter(e -> e.getPressure() < 1)
+                        .forEach(e -> System.out.println(entry.getKey()));
 
-        if (command.equals("flamable")){
-            carMap.entrySet().stream().filter(e-> e.getValue().getCargo().getCargoType().equals("flamable"))
-                    .filter(e-> e.getValue().getEngine().getEnginePower()>250)
-                    .forEach(e-> System.out.println(e.getKey()));
-        }else {
-            carMap.entrySet().stream().filter(e-> e.getValue().getCargo().getCargoType().equals("fragile"))
-
-                    .forEach(e-> System.out.println(e.getKey()));
+            }
         }
-
-
-
-
     }
 }
 
