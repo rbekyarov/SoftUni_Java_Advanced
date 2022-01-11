@@ -24,5 +24,6 @@ public class p2 {
             stack.push(result+"");
         }
         System.out.println(stack.peek());
+
     }
 }
