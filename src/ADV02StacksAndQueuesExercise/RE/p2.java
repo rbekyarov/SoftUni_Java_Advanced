@@ -2,6 +2,7 @@ package ADV02StacksAndQueuesExercise.RE;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class p2 {
@@ -32,6 +33,6 @@ public class p2 {
                 }
             }
         }
-        System.out.println(min);
+
     }
 }
