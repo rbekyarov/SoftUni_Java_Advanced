@@ -6,16 +6,15 @@ import java.util.Scanner;
 public class p5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] size = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        int rows = size[0];
-        int cols = size[1];
+
+        int[] sizeMatrix = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int rows = sizeMatrix[0];
+        int cols = sizeMatrix[1];
 
         int[][] matrix = new int[rows][cols];
 
-        for (int i = 0; i < rows; i++) {
-            int[] dataMatrix = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            matrix[i] = dataMatrix;
-        }
+        fillMatrix(matrix, scanner);
+
         String command = scanner.nextLine();
         while (!command.equals("END")) {
 
@@ -26,6 +25,13 @@ public class p5 {
                 System.out.println("Invalid input!");
             }
             command = scanner.nextLine();
+        }
+    }
+
+    private static void fillMatrix(int[][] matrix, Scanner scanner) {
+        for (int i = 0; i < matrix.length; i++) {
+            int[] dataMatrix = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+            matrix[i] = dataMatrix;
         }
     }
 
@@ -69,6 +75,5 @@ public class p5 {
         }
 
         return true;
-
     }
 }
