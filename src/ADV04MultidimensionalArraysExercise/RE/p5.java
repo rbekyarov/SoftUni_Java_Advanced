@@ -60,7 +60,7 @@ public class p5 {
         int row2 = Integer.parseInt(arr[3]);
         int col2 = Integer.parseInt(arr[4]);
 
-        if (row1 > matrix.length || col1 > matrix[0].length || row2 > matrix.length || col2 > matrix[0].length) {
+        if (row1 > matrix.length-1 || col1 > matrix[0].length-1 || row2 > matrix.length-1 || col2 > matrix[0].length-1) {
             return false;
         }
         return true;
