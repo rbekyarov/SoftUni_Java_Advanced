@@ -7,7 +7,7 @@ public class p2 {
         Scanner scanner = new Scanner(System.in);
         int rows = scanner.nextInt();
         int cols = scanner.nextInt();
-        String [][] matrix = new String[rows][cows];
+        String [][] matrix = new String[rows][col];
         char startletter = 'a';
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
