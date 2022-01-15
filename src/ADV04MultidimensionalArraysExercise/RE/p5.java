@@ -19,8 +19,10 @@ public class p5 {
         while (!command.equals("END")) {
 
             if (commandIsValid(command, matrix)) {
+
                 swapMatrixElement(command, matrix);
                 printMatrix(matrix);
+
             } else {
                 System.out.println("Invalid input!");
             }
