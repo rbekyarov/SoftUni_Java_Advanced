@@ -52,6 +52,9 @@ public class p5 {
 
     private static boolean commandIsValid(String command, int[][] matrix) {
         String[] arr = command.split(" ");
+        if (arr.length != 5) {
+            return false;
+        }
         if (!arr[0].equals("swap")) {
             return false;
         }
@@ -60,9 +63,11 @@ public class p5 {
         int row2 = Integer.parseInt(arr[3]);
         int col2 = Integer.parseInt(arr[4]);
 
-        if (row1 > matrix.length-1 || col1 > matrix[0].length-1 || row2 > matrix.length-1 || col2 > matrix[0].length-1) {
+        if (row1 > matrix.length - 1 || col1 > matrix[0].length - 1 || row2 > matrix.length - 1 || col2 > matrix[0].length - 1
+                || row1 < 0 || col1 < 0 || row2 < 0 || col2 < 0) {
             return false;
         }
+
         return true;
 
     }
