@@ -18,7 +18,7 @@ public class p2 {
         int mouseCol = getPositionCol(matrix);
         int foundCheese = 0;
         boolean isMouseIsGoing = false;
-        System.out.println();
+
         String command = scanner.nextLine();
         while (!command.equals("end")) {
             if(isMouseIsGoing){
@@ -27,7 +27,7 @@ public class p2 {
             switch (command) {
                 case "right":
                     matrix[mouseRow][mouseCol] = '-';
-                    if (mouseCol+1 <= size) {
+                    if (mouseCol+1 <= size-1) {
                         mouseCol++;
                     } else {
                         isMouseIsGoing = true;
@@ -39,7 +39,7 @@ public class p2 {
                     }
                     if (isBonusIsFound(matrix, mouseRow, mouseCol)) {
                         matrix[mouseRow][mouseCol] = '-';
-                        if (mouseCol+1 <= size) {
+                        if (mouseCol+1 <= size-1) {
                             mouseCol++;
                             if (isCheesesFound(matrix, mouseRow, mouseCol)) {
                                 foundCheese++;}
@@ -51,9 +51,11 @@ public class p2 {
                     matrix[mouseRow][mouseCol] = 'M';
 
                     break;
+
+
                 case "down":
                     matrix[mouseRow][mouseCol] = '-';
-                    if (mouseRow+1 <= size) {
+                    if (mouseRow+1 <= size-1) {
                         mouseRow++;
                     } else {
                         isMouseIsGoing = true;
@@ -65,7 +67,7 @@ public class p2 {
                     }
                     if (isBonusIsFound(matrix, mouseRow, mouseCol)) {
                         matrix[mouseRow][mouseCol] = '-';
-                        if (mouseRow+1 <= size) {
+                        if (mouseRow+1 <= size-1) {
                             mouseRow++;
                             if (isCheesesFound(matrix, mouseRow, mouseCol)) {
                                 foundCheese++;}
@@ -77,6 +79,7 @@ public class p2 {
 
                     matrix[mouseRow][mouseCol] = 'M';
                     break;
+
 
                 case "left":
                     matrix[mouseRow][mouseCol] = '-';
@@ -105,6 +108,7 @@ public class p2 {
                     }
                     matrix[mouseRow][mouseCol] = 'M';
                     break;
+
 
                 case "up":
                     matrix[mouseRow][mouseCol] = '-';
