@@ -1,10 +1,17 @@
 /*
                                                 Mouse and cheese
-You will be given an integer n for the size of the mouse territory with a square shape. On the next n lines, you will receive the rows of the territory. The mouse will be placed in a random position, marked with the letter 'M'. On random positions, there will be cheese, marked with 'c'. There may also be a bonus on the territory. There will always be only one bonus. It will be marked with the letter - 'B'. All of the empty positions will be marked with '-'.
+You will be given an integer n for the size of the mouse territory with a square shape.
+On the next n lines, you will receive the rows of the territory.
+The mouse will be placed in a random position, marked with the letter 'M'.
+On random positions, there will be cheese, marked with 'c'. There may also be a bonus on the territory.
+There will always be only one bonus. It will be marked with the letter - 'B'.
+All of the empty positions will be marked with '-'.
         Each turn, you will be given a command for the mouse’s movement.
         The commands will be: "up", "down", "left", "right", "end".
         If the mouse moves to cheese, it eats the cheese and increases the cheese it has eaten by one.
-        If it goes to a bonus, the mouse gets a bonus one move forward and then the bonus disappears. If the mouse goes out she can't return and the program ends. If the mouse receives "end" command the program ends. The mouse needs at least 5 eaten cheeses.
+        If it goes to a bonus, the mouse gets a bonus one move forward and then the bonus disappears.
+         If the mouse goes out she can't return and the program ends.
+         If the mouse receives "end" command the program ends. The mouse needs at least 5 eaten cheeses.
         Input
 
         •	On the first line, you are given the integer n – the size of the square matrix.
@@ -37,8 +44,7 @@ left
 end
 */
 
-
-        package ADV17ExamPrep.Exam23October2021;
+package ADV17ExamPrep.Exam23October2021;
 
 import java.util.Scanner;
 
