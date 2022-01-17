@@ -41,6 +41,8 @@ public class p2 {
                         matrix[mouseRow][mouseCol] = '-';
                         if (mouseCol+1 <= size) {
                             mouseCol++;
+                            if (isCheesesFound(matrix, mouseRow, mouseCol)) {
+                                foundCheese++;}
                         } else {
                             isMouseIsGoing = true;
                             break;
@@ -65,6 +67,8 @@ public class p2 {
                         matrix[mouseRow][mouseCol] = '-';
                         if (mouseRow+1 <= size) {
                             mouseRow++;
+                            if (isCheesesFound(matrix, mouseRow, mouseCol)) {
+                                foundCheese++;}
                         } else {
                             isMouseIsGoing = true;
                             break;
@@ -73,10 +77,13 @@ public class p2 {
 
                     matrix[mouseRow][mouseCol] = 'M';
                     break;
+
                 case "left":
                     matrix[mouseRow][mouseCol] = '-';
                     if (mouseCol-1 >= 0) {
                         mouseCol--;
+                        if (isCheesesFound(matrix, mouseRow, mouseCol)) {
+                            foundCheese++;}
                     } else {
                         isMouseIsGoing = true;
                         break;
@@ -89,6 +96,8 @@ public class p2 {
                         matrix[mouseRow][mouseCol] = '-';
                         if (mouseCol-1 >= 0) {
                             mouseCol--;
+                            if (isCheesesFound(matrix, mouseRow, mouseCol)) {
+                                foundCheese++;}
                         } else {
                             isMouseIsGoing = true;
                             break;
@@ -113,6 +122,8 @@ public class p2 {
                         matrix[mouseRow][mouseCol] = '-';
                         if (mouseRow-1 >= 0) {
                             mouseRow--;
+                            if (isCheesesFound(matrix, mouseRow, mouseCol)) {
+                                foundCheese++;}
                         } else {
                             isMouseIsGoing = true;
                             break;
