@@ -6,6 +6,7 @@ You will be given an integer n for the size of the mouse territory with a square
         If the mouse moves to cheese, it eats the cheese and increases the cheese it has eaten by one.
         If it goes to a bonus, the mouse gets a bonus one move forward and then the bonus disappears. If the mouse goes out she can't return and the program ends. If the mouse receives "end" command the program ends. The mouse needs at least 5 eaten cheeses.
         Input
+
         •	On the first line, you are given the integer n – the size of the square matrix.
         •	The next n lines hold the values for every row.
         •	On each of the next lines, until you receive "end" command,  you will receive a move command.
