@@ -21,9 +21,7 @@ public class p2 {
 
         String command = scanner.nextLine();
         while (!command.equals("end")) {
-            if(isMouseIsGoing){
-                break;
-            }
+
             switch (command) {
                 case "right":
                     matrix[mouseRow][mouseCol] = '-';
@@ -92,9 +90,7 @@ public class p2 {
                         break;
                     }
 
-                    if (isCheesesFound(matrix, mouseRow, mouseCol)) {
-                        foundCheese++;
-                    }
+
                     if (isBonusIsFound(matrix, mouseRow, mouseCol)) {
                         matrix[mouseRow][mouseCol] = '-';
                         if (mouseCol-1 >= 0) {
@@ -135,6 +131,9 @@ public class p2 {
                     }
                     matrix[mouseRow][mouseCol] = 'M';
                     break;
+            }
+            if(isMouseIsGoing){
+                break;
             }
 
             command = scanner.nextLine();
