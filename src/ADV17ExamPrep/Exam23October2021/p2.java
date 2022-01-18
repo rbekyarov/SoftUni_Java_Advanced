@@ -1,3 +1,49 @@
+/*
+                                                Mouse and cheese
+You will be given an integer n for the size of the mouse territory with a square shape.
+On the next n lines, you will receive the rows of the territory.
+The mouse will be placed in a random position, marked with the letter 'M'.
+On random positions, there will be cheese, marked with 'c'. There may also be a bonus on the territory.
+There will always be only one bonus. It will be marked with the letter - 'B'.
+All of the empty positions will be marked with '-'.
+        Each turn, you will be given a command for the mouse’s movement.
+        The commands will be: "up", "down", "left", "right", "end".
+        If the mouse moves to cheese, it eats the cheese and increases the cheese it has eaten by one.
+        If it goes to a bonus, the mouse gets a bonus one move forward and then the bonus disappears.
+         If the mouse goes out she can't return and the program ends.
+         If the mouse receives "end" command the program ends. The mouse needs at least 5 eaten cheeses.
+        Input
+
+        •	On the first line, you are given the integer n – the size of the square matrix.
+        •	The next n lines hold the values for every row.
+        •	On each of the next lines, until you receive "end" command,  you will receive a move command.
+        Output
+        •	On the first line:
+        o	If the mouse goes out of its territory print: "Where is the mouse?".
+        •	On the second line:
+        o	 If the mouse couldn’t eat enough cheeses print: "The mouse couldn't eat the cheeses, she needed {needed} cheeses more.".
+        o	If the mouse has successfully eaten enough cheeses print: "Great job, the mouse is fed {eaten cheeses} cheeses!".
+        •	At the end print the matrix.
+        Constraints
+        •	The size of the square matrix will be between [2…10].
+        •	There will always be only one bonus, marked with 'B.
+        •	The mouse position will be marked with 'M'.
+        •	There won't be a case where a bonus moves the mouse out of its territory.
+
+        Examples
+INPUT         OUTPUT
+3               The mouse couldn't eat the cheeses, she needed 4 cheeses more.
+M--             ---
+ccc             cc-
+---             -M-
+right
+right
+down
+down
+left
+end
+*/
+
 package ADV17ExamPrep.Exam23October2021;
 
 import java.util.Scanner;
@@ -21,9 +67,7 @@ public class p2 {
 
         String command = scanner.nextLine();
         while (!command.equals("end")) {
-            if(isMouseIsGoing){
-                break;
-            }
+
             switch (command) {
                 case "right":
                     matrix[mouseRow][mouseCol] = '-';
@@ -92,9 +136,7 @@ public class p2 {
                         break;
                     }
 
-                    if (isCheesesFound(matrix, mouseRow, mouseCol)) {
-                        foundCheese++;
-                    }
+
                     if (isBonusIsFound(matrix, mouseRow, mouseCol)) {
                         matrix[mouseRow][mouseCol] = '-';
                         if (mouseCol-1 >= 0) {
@@ -135,6 +177,9 @@ public class p2 {
                     }
                     matrix[mouseRow][mouseCol] = 'M';
                     break;
+            }
+            if(isMouseIsGoing){
+                break;
             }
 
             command = scanner.nextLine();
