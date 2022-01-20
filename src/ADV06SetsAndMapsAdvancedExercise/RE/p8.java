@@ -1,6 +1,7 @@
 package ADV06SetsAndMapsAdvancedExercise.RE;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class p8 {
@@ -20,7 +21,7 @@ public class p8 {
             if (!cardMap.containsKey(namePlayer)) {
                 cardMap.put(namePlayer, new LinkedHashSet<>());
             }
-            cardMap.get(namePlayer).addAll(Arrays.stream(cardsArr).toList());
+            cardMap.get(namePlayer).addAll(Arrays.stream(cardsArr).collect(Collectors.toList()));
             input = scanner.nextLine();
         }
         tableValue.put("2", 2);
