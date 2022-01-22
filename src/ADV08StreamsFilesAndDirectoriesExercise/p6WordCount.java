@@ -11,10 +11,10 @@ import java.util.Map;
 
 public class p6WordCount {
     public static void main(String[] args) throws IOException {
-        String searchWord = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\words.txt";
-        String source = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\text.txt";
+        String searchWord = "D:\\folder\\words.txt";
+        String source = "D:\\folder\\text.txt";
 
-        PrintWriter writer = new PrintWriter("E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\output.txt");
+        PrintWriter writer = new PrintWriter("D:\\folder\\output.txt");
         String searchWordString = Files.readString(Path.of(searchWord));
         String sourceString = Files.readString(Path.of(source));
         Map<String, Integer> coincidenceMap = new LinkedHashMap<>();

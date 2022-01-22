@@ -9,9 +9,9 @@ import java.util.List;
 
 public class p5LineNumbers {
     public static void main(String[] args) throws IOException {
-        String path = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\inputLineNumbers.txt";
+        String path = "D:\\folder\\inputLineNumbers.txt";
 
-        PrintWriter writer = new PrintWriter("E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\output.txt");
+        PrintWriter writer = new PrintWriter("D:\\folder\\output.txt");
 
         List<String> inputList = Files.readAllLines(Path.of(path));
 

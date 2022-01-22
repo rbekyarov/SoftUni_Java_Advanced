@@ -7,7 +7,7 @@ import java.util.List;
 
 public class p1SumLines {
     public static void main(String[] args) {
-        String path = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
+        String path = "D:\\folder\\input.txt";
 
         List<String> inputList = null;
         try {

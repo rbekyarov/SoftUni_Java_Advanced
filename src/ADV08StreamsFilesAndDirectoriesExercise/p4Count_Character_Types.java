@@ -8,9 +8,9 @@ import java.util.List;
 
 public class p4Count_Character_Types {
     public static void main(String[] args) throws IOException {
-        String path = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
+        String path = "D:\\folder\\input.txt";
 
-        PrintWriter writer = new PrintWriter("E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\output.txt");
+        PrintWriter writer = new PrintWriter("D:\\folder\\output.txt");
 
         List<String> inputList = Files.readAllLines(Path.of(path));
         StringBuilder input = new StringBuilder();

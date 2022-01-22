@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class p3ALL_CAPITALS {
     public static void main(String[] args) throws FileNotFoundException {
 
-        String path = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
+        String path = "D:\\folder\\input.txt";
         FileInputStream fileStream = new FileInputStream(path);
-        PrintWriter writer = new PrintWriter("E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\output.txt");
+        PrintWriter writer = new PrintWriter("D:\\folder\\output.txt");
 
         Scanner scanner = new Scanner(fileStream);
 

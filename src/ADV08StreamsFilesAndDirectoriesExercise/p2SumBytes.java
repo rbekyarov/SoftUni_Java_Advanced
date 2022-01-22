@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class p2SumBytes {
     public static void main(String[] args) throws IOException {
-        String path = "E:\\folder\\Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
+        String path = "D:\\folder\\input.txt";
         FileInputStream fileStream = new FileInputStream(path);
         Scanner scanner = new Scanner(fileStream);
         int sumAllSymbols = 0;
