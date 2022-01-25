@@ -1,4 +1,4 @@
-package ADV09FunctionalProgramming;
+package ADV09FunctionalProgramming.RE;
 
 import java.util.Arrays;
 import java.util.Scanner;
