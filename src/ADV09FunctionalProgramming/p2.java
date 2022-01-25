@@ -1,9 +1,8 @@
 package ADV09FunctionalProgramming;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 
 public class p2 {
     public static void main(String[] args) {
