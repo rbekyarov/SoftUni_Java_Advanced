@@ -20,24 +20,100 @@ public class p2Formula_One {
         getRowColF(matrix, F);
         int finalRow = F[0];
         int finalCol = F[1];
-
-        while (countCommand-->0){
+        boolean isFINAL = false;
+        while (countCommand-- > 0) {
             String command = scanner.nextLine();
-            switch (command){
+            switch (command) {
+
+                case "left":
+                    matrix[playerRow][playerCol] = "-";
+
+                    if (playerCol - 1 >= 0) {
+
+                        if (matrix[playerRow][playerCol - 1].equals("-")) {
+                            matrix[playerRow][playerCol - 1] = "P";
+                        } else if (matrix[playerRow][playerCol - 1].equals("B")) {
+                            matrix[playerRow][playerCol - 1] = "-";
+                            matrix[playerRow][playerCol - 2] = "P";
+                        } else if (matrix[playerRow][playerCol - 1].equals("T")) {
+                            matrix[playerRow][playerCol - 1] = "-";
+                            matrix[playerRow][playerCol] = "P";
+                        } else if (matrix[playerRow][playerCol - 1].equals("F")) {
+                            matrix[playerRow][playerCol - 1] = "P";
+                            isFINAL = true;
+                        }
+                    } else {
+                        matrix[playerRow][playerCol + matrix.length - 1] = "P";
+                    }
+                    break;
+
+                case "right":
+                    matrix[playerRow][playerCol] = "-";
+
+                    if (playerCol + 1 < matrix.length - 1) {
+
+                        if (matrix[playerRow][playerCol + 1].equals("-")) {
+                            matrix[playerRow][playerCol + 1] = "P";
+                        } else if (matrix[playerRow][playerCol + 1].equals("B")) {
+                            matrix[playerRow][playerCol + 1] = "-";
+                            matrix[playerRow][playerCol + 2] = "P";
+                        } else if (matrix[playerRow][playerCol + 1].equals("T")) {
+                            matrix[playerRow][playerCol + 1] = "-";
+                            matrix[playerRow][playerCol] = "P";
+                        } else if (matrix[playerRow][playerCol + 1].equals("F")) {
+                            matrix[playerRow][playerCol + 1] = "P";
+                            isFINAL = true;
+                        }
+                    } else {
+                        matrix[playerRow][0] = "P";
+                    }
+
+                    break;
 
                 case "up":
+
+                    matrix[playerRow][playerCol] = "-";
+
+                    if (playerRow - 1 >= 0) {
+
+                        if (matrix[playerRow - 1][playerCol].equals("-")) {
+                            matrix[playerRow - 1][playerCol] = "P";
+                        } else if (matrix[playerRow - 1][playerCol].equals("B")) {
+                            matrix[playerRow - 1][playerCol] = "-";
+                            matrix[playerRow - 2][playerCol] = "P";
+                        } else if (matrix[playerRow - 1][playerCol].equals("T")) {
+                            matrix[playerRow - 1][playerCol] = "-";
+                            matrix[playerRow][playerCol] = "P";
+                        } else if (matrix[playerRow - 1][playerCol].equals("F")) {
+                            matrix[playerRow - 1][playerCol] = "P";
+                            isFINAL = true;
+                        }
+                    } else {
+                        matrix[matrix.length - 1][playerCol] = "P";
+                    }
 
                     break;
 
                 case "down":
+                    matrix[playerRow][playerCol] = "-";
 
-                    break;
+                    if (playerCol + 1 < matrix.length - 1) {
 
-                case "left":
-
-                    break;
-
-                case "right":
+                        if (matrix[playerRow + 1][playerCol].equals("-")) {
+                            matrix[playerRow + 1][playerCol] = "P";
+                        } else if (matrix[playerRow + 1][playerCol].equals("B")) {
+                            matrix[playerRow + 1][playerCol] = "-";
+                            matrix[playerRow + 2][playerCol] = "P";
+                        } else if (matrix[playerRow + 1][playerCol].equals("T")) {
+                            matrix[playerRow + 1][playerCol] = "-";
+                            matrix[playerRow][playerCol] = "P";
+                        } else if (matrix[playerRow + 1][playerCol].equals("F")) {
+                            matrix[playerRow + 1][playerCol] = "P";
+                            isFINAL = true;
+                        }
+                    } else {
+                        matrix[0][playerCol] = "P";
+                    }
 
                     break;
             }
