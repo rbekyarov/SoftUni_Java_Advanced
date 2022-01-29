@@ -46,8 +46,8 @@ public class Main {
                 if (mapAccounts.containsKey(id)) {
                     bankAccount = mapAccounts.get(id);
                     bankAccount.getInterest(years);
-                    System.out.printf("%.2f%n",bankAccount.getInterest(years));
-                }else {
+                    System.out.printf("%.2f%n", bankAccount.getInterest(years));
+                } else {
                     System.out.println("Account does not exist");
                 }
 
@@ -55,6 +55,5 @@ public class Main {
 
             input = scanner.nextLine();
         }
-        System.out.println();
     }
 }
