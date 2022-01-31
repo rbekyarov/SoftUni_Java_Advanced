@@ -1,6 +1,7 @@
 package ADV17ExamPrep.E28June2020;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class p1 {
     public static void main(String[] args) {
@@ -71,16 +72,16 @@ public class p1 {
 
         if (!bombEffectQueue.isEmpty()) {
             System.out.print("Bomb Effects: ");
-            bombEffectQueue.stream().map(String::valueOf).forEach(e -> System.out.printf("%s%n",String.join(", ", e)));
-
-
+            String queueLiquidsStr = bombEffectQueue.stream().map(String::valueOf).collect(Collectors.joining(", "));
+            System.out.printf("%s%n", String.join(",", queueLiquidsStr));
 
         } else {
             System.out.println("Bomb Effects: empty");
         }
         if (!bombCasingStack.isEmpty()) {
             System.out.print("Bomb Casings: ");
-            bombCasingStack.stream().map(String::valueOf).forEach(e -> System.out.printf("%s%n",String.join(", ", e)));
+            String queueLiquidsStr = bombCasingStack.stream().map(String::valueOf).collect(Collectors.joining(", "));
+            System.out.printf("%s%n", String.join(",", queueLiquidsStr));
 
         } else {
             System.out.println("Bomb Casings: empty");
