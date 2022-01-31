@@ -72,16 +72,16 @@ public class p1 {
 
         if (!bombEffectQueue.isEmpty()) {
             System.out.print("Bomb Effects: ");
-            String queueLiquidsStr = bombEffectQueue.stream().map(String::valueOf).collect(Collectors.joining(", "));
-            System.out.printf("%s%n", String.join(",", queueLiquidsStr));
+            String result = bombEffectQueue.stream().map(String::valueOf).collect(Collectors.joining(", "));
+            System.out.printf("%s%n", String.join(",", result));
 
         } else {
             System.out.println("Bomb Effects: empty");
         }
         if (!bombCasingStack.isEmpty()) {
             System.out.print("Bomb Casings: ");
-            String queueLiquidsStr = bombCasingStack.stream().map(String::valueOf).collect(Collectors.joining(", "));
-            System.out.printf("%s%n", String.join(",", queueLiquidsStr));
+            String result = bombCasingStack.stream().map(String::valueOf).collect(Collectors.joining(", "));
+            System.out.printf("%s%n", String.join(",", result));
 
         } else {
             System.out.println("Bomb Casings: empty");
