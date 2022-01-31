@@ -64,10 +64,11 @@ public class p1 {
             }
         }
 
-        if (bombEffectQueue.isEmpty() && bombCasingStack.isEmpty()) {
-            System.out.println("You don't have enough materials to fill the bomb pouch.");
+         if (countDatura >= 3 && countCherry >= 3 && countSmoke >= 3) {
+
+             System.out.println("Bene! You have successfully filled the bomb pouch!");
         } else {
-            System.out.println("Bene! You have successfully filled the bomb pouch!");
+             System.out.println("You don't have enough materials to fill the bomb pouch.");
         }
 
         if (!bombEffectQueue.isEmpty()) {
