@@ -25,6 +25,7 @@ public class p1 {
 
             if (flowerWreaths >= 5) {
                 isWreathsDone = true;
+
             }
             int sumElement = liliesStack.peek() + rosesQueue.peek();
 
@@ -41,16 +42,13 @@ public class p1 {
             }
 
         }
-        if (flowersLeft / 15 >= 1) {
-            flowerWreaths += flowersLeft / 15;
-
-            if (flowerWreaths == 5) {
-                isWreathsDone = true;
-
-            }
+        while (flowersLeft > 15) {
+            flowerWreaths++;
+            flowersLeft -= 15;
         }
-        if (isWreathsDone) {
-            System.out.printf("You made it, you are going to the competition with %d wreaths!",flowerWreaths);
+
+        if (flowerWreaths >= 5) {
+            System.out.printf("You made it, you are going to the competition with %d wreaths!", flowerWreaths);
         } else {
             System.out.printf("You didn't make it, you need %d wreaths more!", 5 - flowerWreaths);
         }
