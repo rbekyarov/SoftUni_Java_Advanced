@@ -3,7 +3,7 @@ package ADV17ExamPrep.E16December2020;
 import java.util.Scanner;
 
 public class p2 {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int rows = Integer.parseInt(scanner.nextLine());
@@ -74,20 +74,40 @@ public class p2 {
             }
             char digit = field[positionRow][positionCol];
             if (Character.isDigit(digit)) {
-                sumMoney += digit;
+                sumMoney += digit - '0';
                 field[positionRow][positionCol] = 'S';
             }
             if (field[positionRow][positionCol]=='O'){
                 field[positionRow][positionCol] = '-';
-                positionRow = findNextO(field)[0];
-                positionCol = findNextO(field)[1];
+                int[] secondO = findNextO(field);
+                positionRow = secondO[0];
+                positionCol = secondO[1];
+                field[positionRow][positionCol] = 'S';
+            } if(field[positionRow][positionCol]=='-'){
                 field[positionRow][positionCol] = 'S';
             }
             input = scanner.nextLine();
         }
+        if (sumMoney>49){
+            System.out.println("Good news! You succeeded in collecting enough money!");
+        }
+        if (isDisappear){
+            System.out.println("Bad news, you are out of the bakery.");
+        }
+        System.out.println("Money: "+sumMoney);
+        printMatrix(field);
     }
 
-    private int[] findNextO(char[][] field) {
+    private static void printMatrix(char[][] field) {
+        for (int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[row].length; col++) {
+                System.out.print(field[row][col]);
+            }
+            System.out.println();
+        }
+    }
+
+    private static int[] findNextO(char[][] field) {
         int [] arr = new int[2];
         for (int row = 0; row <field.length ; row++) {
             for (int col = 0; col <field.length ; col++) {
