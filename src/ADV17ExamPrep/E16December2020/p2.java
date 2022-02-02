@@ -83,6 +83,7 @@ public class p2 {
                 positionCol = findNextO(field)[1];
                 field[positionRow][positionCol] = 'S';
             }
+            input = scanner.nextLine();
         }
     }
 
