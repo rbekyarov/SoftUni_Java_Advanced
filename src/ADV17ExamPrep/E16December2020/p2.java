@@ -25,7 +25,7 @@ public class p2 {
         boolean isDisappear = false;
         int sumMoney = 0;
         String input = scanner.nextLine();
-        while (sumMoney<50) {
+        while (true) {
 
             switch (input) {
                 case "up":
@@ -77,24 +77,27 @@ public class p2 {
                 sumMoney += digit - '0';
                 field[positionRow][positionCol] = 'S';
             }
-            if (field[positionRow][positionCol]=='O'){
+            if (sumMoney > 49) {
+                break;
+            }
+            if (field[positionRow][positionCol] == 'O') {
                 field[positionRow][positionCol] = '-';
-                int[] secondO = findNextO(field);
-                positionRow = secondO[0];
-                positionCol = secondO[1];
+                positionRow = findNextO(field)[0];
+                positionCol = findNextO(field)[1];
                 field[positionRow][positionCol] = 'S';
-            } if(field[positionRow][positionCol]=='-'){
+            }
+            if (field[positionRow][positionCol] == '-') {
                 field[positionRow][positionCol] = 'S';
             }
             input = scanner.nextLine();
         }
-        if (sumMoney>49){
+        if (sumMoney > 49) {
             System.out.println("Good news! You succeeded in collecting enough money!");
         }
-        if (isDisappear){
+        if (isDisappear) {
             System.out.println("Bad news, you are out of the bakery.");
         }
-        System.out.println("Money: "+sumMoney);
+        System.out.println("Money: " + sumMoney);
         printMatrix(field);
     }
 
@@ -108,12 +111,13 @@ public class p2 {
     }
 
     private static int[] findNextO(char[][] field) {
-        int [] arr = new int[2];
-        for (int row = 0; row <field.length ; row++) {
-            for (int col = 0; col <field.length ; col++) {
-                if (field[row][col]=='O'){
-                   row =  arr[0];
-                   col = arr[1];
+        int[] arr = new int[2];
+        for (int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field.length; col++) {
+                if (field[row][col] == 'O') {
+                    arr[0] = row;
+                    arr[1] = col;
+                    break;
                 }
             }
         }
