@@ -3,7 +3,7 @@ package ADV17ExamPrep.E16December2020;
 import java.util.Scanner;
 
 public class p2 {
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int rows = Integer.parseInt(scanner.nextLine());
@@ -22,5 +22,80 @@ public class p2 {
                 }
             }
         }
+        boolean isDisappear = false;
+        int sumMoney = 0;
+        String input = scanner.nextLine();
+        while (sumMoney<50) {
+
+            switch (input) {
+                case "up":
+                    if (positionRow - 1 >= 0) {
+                        field[positionRow][positionCol] = '-';
+                        positionRow--;
+
+                    } else {
+                        isDisappear = true;
+                        field[positionRow][positionCol] = '-';
+                    }
+                    break;
+                case "down":
+                    if (positionRow + 1 < field.length) {
+                        field[positionRow][positionCol] = '-';
+                        positionRow++;
+
+                    } else {
+                        isDisappear = true;
+                        field[positionRow][positionCol] = '-';
+                    }
+                    break;
+                case "left":
+                    if (positionCol - 1 >= 0) {
+                        field[positionRow][positionCol] = '-';
+                        positionCol--;
+
+                    } else {
+                        isDisappear = true;
+                        field[positionRow][positionCol] = '-';
+                    }
+                    break;
+                case "right":
+                    if (positionCol + 1 < field.length) {
+                        field[positionRow][positionCol] = '-';
+                        positionCol++;
+
+                    } else {
+                        isDisappear = true;
+                        field[positionRow][positionCol] = '-';
+                    }
+                    break;
+            }
+            if (isDisappear) {
+                break;
+            }
+            char digit = field[positionRow][positionCol];
+            if (Character.isDigit(digit)) {
+                sumMoney += digit;
+                field[positionRow][positionCol] = 'S';
+            }
+            if (field[positionRow][positionCol]=='O'){
+                field[positionRow][positionCol] = '-';
+                positionRow = findNextO(field)[0];
+                positionCol = findNextO(field)[1];
+                field[positionRow][positionCol] = 'S';
+            }
+        }
+    }
+
+    private int[] findNextO(char[][] field) {
+        int [] arr = new int[2];
+        for (int row = 0; row <field.length ; row++) {
+            for (int col = 0; col <field.length ; col++) {
+                if (field[row][col]=='O'){
+                   row =  arr[0];
+                   col = arr[1];
+                }
+            }
+        }
+        return arr;
     }
 }
