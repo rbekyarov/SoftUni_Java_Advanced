@@ -5,32 +5,33 @@ import java.util.List;
 
 public class Clinic {
     private int capacity;
-    private List<Pet> pets;
+    private List<Pet> data;
 
     public Clinic(int capacity) {
+
         this.capacity = capacity;
-        this.pets = new ArrayList<>();
+        this.data = new ArrayList<>();
     }
     public void add(Pet pet){
-        pets.add(pet);
+        data.add(pet);
     }
     public boolean remove(String pet){
-       return pets.removeIf(e -> e.getName().equals(pet));
+       return data.removeIf(e -> e.getName().equals(pet));
     }
     public Pet getPet(String name, String owner){
-        return this.pets.stream().filter(e -> e.getName().equals(name) && e.getOwner().equals(owner))
+        return this.data.stream().filter(e -> e.getName().equals(name) && e.getOwner().equals(owner))
                 .findFirst().orElse(null);
     }
     public Pet getOldestPet(){
-        return this.pets.stream().min((p1, p2) -> Integer.compare(p2.getAge(), p1.getAge())).orElse(null);
+        return this.data.stream().min((p1, p2) -> Integer.compare(p2.getAge(), p1.getAge())).orElse(null);
     }
     public int getCount(){
-        return pets.size();
+        return data.size();
     }
     public String getStatistics(){
         StringBuilder output = new StringBuilder("The clinic has the following patients:");
         output.append(System.lineSeparator());
-        this.pets.forEach(e -> output.append(e.getName()).append(" ").append(e.getOwner()).append(System.lineSeparator()));
+        this.data.forEach(e -> output.append(e.getName()).append(" ").append(e.getOwner()).append(System.lineSeparator()));
         return output.toString();
     }
 }
