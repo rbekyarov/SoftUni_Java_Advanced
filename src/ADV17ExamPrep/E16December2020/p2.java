@@ -10,6 +10,7 @@ public class p2 {
         char[][] field = new char[rows][rows];
 
         for (int row = 0; row < rows; row++) {
+
             field[row] = scanner.nextLine().toCharArray();
         }
         int positionRow = 0;
