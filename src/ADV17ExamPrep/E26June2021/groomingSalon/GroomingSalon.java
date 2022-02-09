@@ -31,10 +31,7 @@ public class GroomingSalon {
         return data.size();
     }
     public String getStatistics(){
-        //o	" The grooming salon has the following clients:
-        //{name} {owner}
-        //{name} {owner}
-        //   (…)"
+
         StringBuilder output  = new StringBuilder();
         output.append("The grooming salon has the following clients:");
         output.append(System.lineSeparator());
