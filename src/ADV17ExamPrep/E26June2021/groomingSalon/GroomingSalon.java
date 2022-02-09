@@ -13,7 +13,7 @@ public class GroomingSalon {
     }
 
     public void add(Pet pet) {
-        if(capacity>0){
+        if(capacity> data.size()){
             data.add(pet);
         }
 
