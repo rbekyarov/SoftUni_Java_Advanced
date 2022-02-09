@@ -37,6 +37,6 @@ public class Pet {
 
     @Override
     public String toString() {
-        return name + " " + age + " - (" + owner + ")";
+        return String.format("%s %d (%s)", name, age, owner);
     }
 }
