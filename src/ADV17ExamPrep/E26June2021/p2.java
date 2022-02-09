@@ -85,7 +85,7 @@ public class p2 {
                 field[pythonRow][pythonCol] = 's';
             } else if (field[pythonRow][pythonCol] == 'e') {
                 System.out.println("You lose! Killed by an enemy!");
-                break;
+                return;
             } else {
                 field[pythonRow][pythonCol] = 's';
             }
@@ -93,10 +93,21 @@ public class p2 {
         if (isEaten) {
             System.out.println("You win! Final python length is " + pythonLength);
         } else {
-            System.out.printf("You lose! There is still %d food to be eaten.%n", 3 - pythonLength);
+            System.out.printf("You lose! There is still %d food to be eaten.%n", leftFood(field));
         }
     }
 
+    private static int leftFood(char[][] field) {
+        int left = 0;
+        for (int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[row].length; col++) {
+                if (field[row][col] == 'f') {
+                    left++;
+                }
+            }
+        }
+        return left;
+    }
     private static boolean chekMoreFood(char[][] field) {
         boolean isFind = false;
         for (int row = 0; row < field.length; row++) {
