@@ -30,7 +30,7 @@ public class p1 {
                     threadsQueue.poll();
                 }
             }else {
-                System.out.printf("Thread with value %d killed task %d%n",threadsQueue.peek(),tasksStack.pop());
+                System.out.printf("Thread with value %d killed task %d%n",threadsQueue.peek(),taskToBeKilled);
                 break;
             }
         }
