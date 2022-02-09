@@ -13,7 +13,7 @@ public class GroomingSalon {
     }
 
     public void add(Pet pet) {
-        if(capacity> data.size()){
+        if (capacity > data.size()) {
             data.add(pet);
         }
 
@@ -27,12 +27,14 @@ public class GroomingSalon {
         return this.data.stream().filter(e -> e.getName().equals(name) && e.getOwner().equals(owner))
                 .findFirst().orElse(null);
     }
-    public int getCount(){
+
+    public int getCount() {
         return data.size();
     }
-    public String getStatistics(){
 
-        StringBuilder output  = new StringBuilder();
+    public String getStatistics() {
+
+        StringBuilder output = new StringBuilder();
         output.append("The grooming salon has the following clients:");
         output.append(System.lineSeparator());
         this.data.forEach(e -> output.append(e.getName()).append(" ").append(e.getOwner()).append(System.lineSeparator()));
