@@ -23,7 +23,7 @@ public class p1 {
         while (!tasksStack.isEmpty() && !threadsQueue.isEmpty()) {
             if (tasksStack.peek() != taskToBeKilled) {
 
-                if (tasksStack.peek() < threadsQueue.peek()) {
+                if (tasksStack.peek() <= threadsQueue.peek()) {
                     tasksStack.pop();
                     threadsQueue.poll();
                 } else {
